@@ -1,0 +1,221 @@
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<b:template xmlns:b='http://www.google.com/2005/gml/b'>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><data:blog.pageTitle/></title>
+
+  <!-- ✅ AdSense Loader Script (Only once) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7898876438680806"
+    crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header-ad {
+      text-align: center;
+      padding: 10px;
+      background: #fff;
+    }
+
+    nav {
+      background: #333;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      padding: 15px;
+      text-decoration: none;
+      display: block;
+    }
+
+    nav a:hover {
+      background: #555;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .content {
+      flex: 3;
+      margin-right: 20px;
+    }
+
+    .sidebar {
+      flex: 1;
+      background: #fff;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .post {
+      background: white;
+      margin-bottom: 20px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .post h2 {
+      margin-top: 0;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* WhatsApp Floating Button */
+    #whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      background-color: #25d366;
+      border-radius: 50%;
+      padding: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    #whatsapp-button:hover {
+      transform: scale(1.1);
+    }
+
+    #whatsapp-button img {
+      width: 40px;
+      height: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .content, .sidebar {
+        margin-right: 0;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Sahil Blog</h1>
+    <p>सटीक जानकारी का भरोसेमंद स्रोत</p>
+  </header>
+
+  <!-- ✅ Header Banner Ad -->
+  <div class="header-ad">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7898876438680806"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+  <!-- ✅ Navigation -->
+  <nav>
+    <a href="/">होम</a>
+    <a href="/search/label/Tech">टेक</a>
+    <a href="/search/label/News">न्यूज़</a>
+    <a href="/search/label/Earn">एड्स से कमाई</a>
+    <a href="/p/contact.html">संपर्क करें</a>
+  </nav>
+
+  <div class="container">
+    <div class="content">
+      <!-- ✅ Blog Posts Section -->
+      <b:section id='main' class='post' showaddelement='yes'>
+        <b:widget id='Blog1' type='Blog' title='Blog Posts'>
+          <b:includable id='main' var='this'>
+            <b:loop values='data:posts' var='post'>
+              <div class="post">
+                <h2><a expr:href='data:post.url'><data:post.title/></a></h2>
+                <data:post.body/>
+
+                <!-- ✅ In-Article Ad -->
+                <div style="margin:20px 0;">
+                  <ins class="adsbygoogle"
+                       style="display:block; text-align:center;"
+                       data-ad-layout="in-article"
+                       data-ad-format="fluid"
+                       data-ad-client="ca-pub-7898876438680806"
+                       data-ad-slot="3847947297"></ins>
+                  <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+                </div>
+              </div>
+            </b:loop>
+          </b:includable>
+        </b:widget>
+      </b:section>
+    </div>
+
+    <div class="sidebar">
+      <h3>About Me</h3>
+      <p>मेरा नाम साहिल है। मैं टेक, न्यूज़ और टिप्स से जुड़ी जानकारी देता हूँ।</p>
+
+      <h3>Contact</h3>
+      <p><strong>Phone:</strong> 7209584768</p>
+      <p><strong>Email:</strong> <a href="mailto:in.sahilpubcare@gmail.com">in.sahilpubcare@gmail.com</a></p>
+
+      <h3>Recent Posts</h3>
+      <b:section id='sidebar-posts' showaddelement='yes'>
+        <b:widget id='PopularPosts1' type='PopularPosts' title='Recent Posts' />
+      </b:section>
+
+      <h3>Ad Space</h3>
+      <!-- ✅ Sidebar Ad (Slot: 1446512212) -->
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:300px;height:600px"
+           data-ad-client="ca-pub-7898876438680806"
+           data-ad-slot="1446512212"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Sahil Blog | Contact: 7209584768 | Email: in.sahilpubcare@gmail.com
+  </footer>
+
+  <!-- ✅ WhatsApp Floating Button -->
+  <a href="https://wa.me/917209584768?text=हेलो%20साहिल%2C%20मुझे%20आपसे%20संपर्क%20करना%20है" target="_blank" id="whatsapp-button">
+    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="Chat on WhatsApp" />
+  </a>
+
+</body>
+</html>
+</b:template>
